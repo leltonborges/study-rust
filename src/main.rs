@@ -23,11 +23,13 @@ fn main() {
 
     println!("Idade: {}", soma(13, 5));
 
-    println!("Estruturas de condições");
+
     estrutura_if();
+    repedicoes();
 }
 
 fn estrutura_if() {
+    println!("Estruturas de condições");
     let idade: u8 = 17;
     let autorizado: bool = true;
 
@@ -42,3 +44,46 @@ fn estrutura_if() {
     let condicao = if idade > 17 { "maior" } else { "menor" };
     println!("É {} de idade", condicao);
 }
+
+fn repedicoes() {
+    println!("Estruturas de repetições");
+
+    let multiplicador: u8 = 8;
+    let mut count: u8 = 0;
+    while count < 10 {
+        count += 1;
+        println!("{} x {} = {}", multiplicador, count, count * multiplicador);
+    }
+
+    println!("Loops");
+    count = 0;
+    loop {
+        count += 1;
+        if count == 5 { continue; }
+        println!("{} x {} = {}", multiplicador, count, count * multiplicador);
+        if count == 10 { break; }
+    }
+
+    println!("For!!");
+    for i in 1..11 {
+        println!("{} x {} = {}", multiplicador, i, i * multiplicador);
+    }
+
+    'outer: for x in 5..50 {
+        for y in 0..10 {
+            println!("x: {}, y: {}", x, y);
+            if x == y {
+                println!("break x: {}, y: {}", x, y);
+                break 'outer;
+            }
+        }
+    }
+
+    for i in std::iter::repeat(5) {
+        println!("turns out {i} never stops being 5");
+        break; // would loop forever otherwise
+    }
+}
+
+
+
