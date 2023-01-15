@@ -26,6 +26,7 @@ fn main() {
 
     estrutura_if();
     repedicoes();
+    match_estrutura();
 }
 
 fn estrutura_if() {
@@ -85,5 +86,15 @@ fn repedicoes() {
     }
 }
 
+fn match_estrutura() {
+    println!("Match");
+    let linguagem = "";
+    let proposito = match linguagem {
+        "PHP" => "Web",
+        "Kotlin" => "Android",
+        "Python" => "Data Science",
+        _ => "ALL"
+    };
 
-
+    println!("Proposito: {}", proposito);
+}
