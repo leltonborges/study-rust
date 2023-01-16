@@ -10,7 +10,9 @@ fn main() {
     // estrutura_if();
     // repedicoes();
     // match_estrutura();
-    ownership();
+    // ownership();
+    pattern_matching();
+    matching();
 }
 
 fn environment() {
@@ -101,11 +103,56 @@ fn match_estrutura() {
     println!("Proposito: {}", proposito);
 }
 
-fn ownership(){
-    let uma_string= String::from("Lelton");
-    rouba(uma_string);
+fn ownership() {
+    let mut uma_string = String::from("Lelton");
+    rouba(&mut uma_string);
+    println!("Dono: {}", uma_string);
 }
 
-fn rouba(nome: String){
-    println!("{}", nome);
+fn rouba(nome: &mut String) {
+    nome.push_str("  Borges");
+    println!("Emprestado: {}", nome);
 }
+
+fn pattern_matching() {
+    for i in 0..20 {
+        println!("{}: {}", i, match i {
+            1 => "Pouco",
+            2 | 3 => "Pouquinho",
+            4..=10 => "Um bocado",
+            _ if i % 2 == 0 => "Uma boa quantidade",
+            _ => "Default"
+        });
+    }
+
+    for x in 0..10 {
+        for y in 0..10 {
+            println!("{} : {} = {:?}", x, y, match (x, y) {
+                (0, 0) => "Ínicio",
+                (0, _) => "Coluno zero",
+                (_,_) if x == y => "Iguais",
+                _ => "None"
+            })
+        }
+    }
+}
+
+fn matching() {
+    let foo = 'f';
+    assert!(matches!(foo, 'A'..='Z' | 'a'..='z'));
+
+    let bar = Some(4);
+    assert!(matches!(bar, Some(x) if x > 2));
+
+    let x = Some(5);
+    let y = 10;
+
+    match x {
+        Some(50) => println!("Got 50"),
+        Some(y) => println!("Matched, y = {}", y),
+        _ => println!("Default case, x = {:?}", x),
+    }
+
+    println!("at the end: x = {:?}, y = {}", x, y);
+}
+
