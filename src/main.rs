@@ -6,6 +6,14 @@ fn soma(age1: u8, age2: u8) -> u8 {
 }
 
 fn main() {
+    // environment();
+    // estrutura_if();
+    // repedicoes();
+    // match_estrutura();
+    ownership();
+}
+
+fn environment() {
     let idade: i32 = 31;
     println!("valor = {}, tamanho = {}", idade, std::mem::size_of_val(&idade));
 
@@ -20,13 +28,7 @@ fn main() {
 
     println!("PI: {}", PI);
     println!("GLOBAL_ENV: {}", GLOBAL_ENV);
-
     println!("Idade: {}", soma(13, 5));
-
-
-    estrutura_if();
-    repedicoes();
-    match_estrutura();
 }
 
 fn estrutura_if() {
@@ -81,7 +83,7 @@ fn repedicoes() {
     }
 
     for i in std::iter::repeat(5) {
-        println!("turns out {i} never stops being 5");
+        println!("turns out {} never stops being 5", i);
         break; // would loop forever otherwise
     }
 }
@@ -97,4 +99,13 @@ fn match_estrutura() {
     };
 
     println!("Proposito: {}", proposito);
+}
+
+fn ownership(){
+    let uma_string= String::from("Lelton");
+    rouba(uma_string);
+}
+
+fn rouba(nome: String){
+    println!("{}", nome);
 }
