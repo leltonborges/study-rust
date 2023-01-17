@@ -11,8 +11,9 @@ fn main() {
     // repedicoes();
     // match_estrutura();
     // ownership();
-    pattern_matching();
-    matching();
+    // pattern_matching();
+    // matching();
+    erros();
 }
 
 fn environment() {
@@ -130,7 +131,7 @@ fn pattern_matching() {
             println!("{} : {} = {:?}", x, y, match (x, y) {
                 (0, 0) => "Ínicio",
                 (0, _) => "Coluno zero",
-                (_,_) if x == y => "Iguais",
+                (_, _) if x == y => "Iguais",
                 _ => "None"
             })
         }
@@ -156,3 +157,14 @@ fn matching() {
     println!("at the end: x = {:?}, y = {}", x, y);
 }
 
+fn erros() {
+    match get_result() {
+        Ok(s) => println!("Success: {}", s),
+        Err(er) => println!("Err: {}", er)
+    }
+}
+
+fn get_result() -> Result<String, u8> {
+    Ok(String::from("Tudo deu certo"))
+    // Err(4)
+}
