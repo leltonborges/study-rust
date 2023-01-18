@@ -1,31 +1,16 @@
+use colors::{color, color::Color};
+use matrix::matriz;
+use week_days::{week, week::WeekDay};
+
+mod week_days;
+mod matrix;
+mod colors;
+
 fn main() {
-    arrays();
-    matrix();
-}
-
-fn arrays() {
-    let notas: [f32; 4] = [10f32, 8.7, 9.6, 7f32];
-
-    for i in notas.iter().enumerate() {
-        let (k, v): (usize, &f32) = i;
-        println!("array[{k}], = {v}");
-    }
-
-    for i in notas {
-        let x: f32 = i;
-        println!("valeu = {x}");
-    }
-}
-
-fn matrix() {
-    let matriz: [[f32; 3]; 2] = [
-        [0.0, 1.3, 0.1],
-        [2.1; 3]
-    ];
-
-    for _x in matriz {
-        for _y in _x {
-            println!("v = {_y}");
-        }
-    }
+    // arrays();
+    // matrix();
+    println!("Fim de semana: {}", week::fim_de_semana(WeekDay::QUARTA));
+    println!("Cor: {}", color::cores(Color::BLUE));
+    println!("Cor: {}", color::cores(Color::RgbColor(3, 6, 1)));
+    println!("Cor: {}", color::cores(Color::CymkColor { cyan: 10, magenta: 95, yellow: 15, black: 64 }));
 }

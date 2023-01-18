@@ -5,6 +5,7 @@ fn soma(age1: u8, age2: u8) -> u8 {
     age1 + age2
 }
 
+#[allow(dead_code)]
 fn main() {
     // environment();
     // estrutura_if();
