@@ -24,6 +24,11 @@ pub fn conteudo() {
     }
 }
 
+pub enum OptionResult<T>{
+    Some(T),
+    None
+}
+
 fn ler_arquivo(path_file: String) -> Option<String> {
     Some(String::from("Conteudo do arquivo"))
 }
