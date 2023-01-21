@@ -6,10 +6,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/fsdf/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/common/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/modules/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/actix/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/src/fsdf/target" />
       <excludeFolder url="file://$MODULE_DIR$/common/target" />
       <excludeFolder url="file://$MODULE_DIR$/modules/target" />
+      <excludeFolder url="file://$MODULE_DIR$/actix/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
